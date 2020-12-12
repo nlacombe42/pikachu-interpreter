@@ -100,6 +100,13 @@ def run(fileName, args):
                     print(chr(n),end="")
                 else:
                     print("undefined",end="")
+            elif command == "pikachu pi":
+                userInput = input()
+                
+                for c in userInput[::-1]:
+                    tStack.PUSH(ord(c))
+                
+                tStack.PUSH(len(userInput))
             else:
                 tStack.PUSH(2)
         else:
