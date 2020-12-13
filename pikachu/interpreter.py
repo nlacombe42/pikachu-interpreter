@@ -75,6 +75,13 @@ def run(fileName, args):
             command = terms[0]
             if command == "pikachu":
                 tStack.DIV()
+            elif command == "pika":
+                user_input = input()
+
+                for character in user_input[::-1]:
+                    tStack.PUSH(ord(character))
+
+                tStack.PUSH(len(user_input))
             else:
                 tStack.PUSH(1)
         elif len(terms) < 5:
@@ -100,13 +107,6 @@ def run(fileName, args):
                     print(chr(n),end="")
                 else:
                     print("undefined",end="")
-            elif command == "pikachu pi":
-                userInput = input()
-                
-                for c in userInput[::-1]:
-                    tStack.PUSH(ord(c))
-                
-                tStack.PUSH(len(userInput))
             else:
                 tStack.PUSH(2)
         else:
